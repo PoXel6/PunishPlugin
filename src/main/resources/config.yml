@@ -1,0 +1,52 @@
+# PERMISSIONS:
+# punish: Permission for global access to punish and reload the plugin.
+# punish.punish: Permission to punish another player.
+# punish.reload: Permission to reload the plugin (both config and GUI).
+# punish.reload.config: Permission to reload the configurations.
+# punish.reload.gui: Permission to reload and update the punishment GUI.
+#
+#
+#
+# MENUS:
+# Menus use miniMessage from the adventure API for titles.
+# Use this website to preview your message:
+# Menus use miniMessage from adventure API for title.
+# Use this website to preview your message.
+# https://webui.advntr.dev/
+Menus:
+  Punish: '<light_purple><b>Punish</b></light_purple> <gray>Menu</gray>'
+  Ban: '<b><red>Ban</red></b> <gray>Menu</gray>'
+  Mute: '<b><green>Mute</green></b> <gray>Menu</gray>'
+#
+#
+#
+# Punishments
+# Add punishments like this:
+#   Swearing: Key, isn't used for anything directly.
+#     — Item What item to display as punishment on the punishment Menu. Example: STONE.
+#       NOTE: All Material IDs are supported from 1.8x-1.20.×. Recommended: https://minecraftitemids.com/
+#     — Name How you want it to appear. Example: Swearing.
+#     — Reason What the player sees on the punishment screen. Example: Unfair Advantage.
+#     — Duration How long the punishment lasts. Valid durations are:
+#     - Mode (Ban / Mute / Kick)
+Punishments:
+  swearing:
+    - "SKELETON_SKULL"
+    - "swearing"
+    - "Swearing / Toxicity / Spamming"
+    - "1d"
+  cheat:
+    - "WOODEN_AXE"
+    - "cheat"
+    - "Unfair Advantage"
+    - "7d"
+  bad-username:
+    - "NAME_TAG"
+    - "Bad Username"
+    - "Innaproperiate Username"
+    - "Permanent"
+  bug-abuse:
+    - "STONE"
+    - "Bug Abuse"
+    - "Bug Abuse"
+    - "Permanent"
