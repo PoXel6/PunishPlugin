@@ -27,15 +27,15 @@ public final class PunishCommand extends BaseCommand {
 		super("punish");
 	}
 
-	@Default
 	@HelpCommand
-	@CommandAlias("h")
-	@CommandPermission("punish")
+	@CommandAlias("help|h")
+	@CommandPermission("punish.global")
 	@Description("Displays the help menu.")
 	public void onCommand(CommandSender sender, CommandHelp help) {
 		help.showHelp();
 	}
 
+	@Default
 	@Syntax("<player>")
 	@CommandCompletion("@players")
 	@CommandPermission("punish.punish")
@@ -48,16 +48,14 @@ public final class PunishCommand extends BaseCommand {
 		}
 	}
 
-	@CommandAlias("rl")
-	@Subcommand("reload")
+	@Subcommand("reload|rl")
 	@CommandPermission("punish.reload")
 	@Description("reloads gui and config.")
 	public int onReload(CommandSender sender) {
 		return (onReloadConfig(sender) == SUCCESS) && (onReloadGui(sender) == SUCCESS) ? SUCCESS : ERROR;
 	}
 
-	@CommandAlias("rl cfg")
-	@Subcommand("reload config")
+	@Subcommand("reload config|cfg")
 	@Description("reloads config.")
 	@CommandPermission("punish.reload.config")
 	public int onReloadConfig(CommandSender sender) {
@@ -66,7 +64,6 @@ public final class PunishCommand extends BaseCommand {
 		return SUCCESS;
 	}
 
-	@CommandAlias("rl gui")
 	@Subcommand("reload gui")
 	@Description("reloads gui.")
 	@CommandPermission("punish.reload.gui")
