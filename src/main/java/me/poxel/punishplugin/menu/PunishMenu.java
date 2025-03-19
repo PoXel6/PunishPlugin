@@ -21,7 +21,11 @@ public final class PunishMenu extends BaseMenu {
 	public static void update() {
 		var menu = new PunishMenu().getInventory();
 		Optional<Gui> optMenu = Optional.of(menu);
-		optMenu.ifPresent(Gui::update);
+		optMenu.ifPresentOrElse(
+				Gui::update,
+				() -> PunishPlugin.getInstance()
+				                  .getLogger().warning("Inventory cannot be null!"));
+
 	}
 
 	@Override
@@ -40,7 +44,8 @@ public final class PunishMenu extends BaseMenu {
 			logPunishmentDetails(list);
 			var lore = getLore(list);
 			getInventory().addItem(ItemBuilder.from(Material.getMaterial(list.get(0)))
-			                                  .name(Component.text(list.get(1))).lore(lore)
+			                                  .name(Component.text(list.get(1)))
+			                                  .lore(lore)
 			                                  .asGuiItem());
 		}
 	}
@@ -62,10 +67,7 @@ public final class PunishMenu extends BaseMenu {
 	}
 
 	private void setSlotActions(final Menu menu, final int slot) {
-		getInventory().addSlotAction(
-				slot, event -> {
-					menu.open((Player) event.getWhoClicked());
-				});
+		getInventory().addSlotAction(slot, event -> menu.open((Player) event.getWhoClicked()));
 	}
 
 	private void logPunishmentDetails(List<String> list) {
