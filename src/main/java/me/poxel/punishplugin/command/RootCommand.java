@@ -1,13 +1,10 @@
 package me.poxel.punishplugin.command;
 
 import co.aikar.commands.BaseCommand;
-import co.aikar.commands.PaperCommandManager;
-import co.aikar.commands.annotation.CommandAlias;
-import co.aikar.commands.annotation.CommandCompletion;
-import co.aikar.commands.annotation.CommandPermission;
-import co.aikar.commands.annotation.Default;
+import co.aikar.commands.annotation.*;
 import com.mojang.brigadier.Command;
 import me.poxel.punishplugin.PunishPlugin;
+import me.poxel.punishplugin.config.ConfigManager;
 import me.poxel.punishplugin.menu.PunishMenu;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -15,14 +12,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-@CommandPermission("punish")
+@SuppressWarnings("unused")
 @CommandAlias("p")
+@CommandPermission("punish")
 public class RootCommand extends BaseCommand {
 
 
 	private final int SUCCESS = Command.SINGLE_SUCCESS;
 	private final int ERROR = 0;
-	private final PaperCommandManager manager = PunishPlugin.getInstance().getManager();
+
+	@SuppressWarnings("deprecation")
+	public RootCommand() {
+		super("punish");
+	}
 
 	@Default
 	@CommandCompletion("@players")
