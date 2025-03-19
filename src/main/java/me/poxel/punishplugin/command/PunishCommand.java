@@ -15,7 +15,7 @@ import org.bukkit.entity.Player;
 @SuppressWarnings("unused")
 @CommandAlias("p")
 @CommandPermission("punish")
-public class PunishCommand extends BaseCommand {
+public final class PunishCommand extends BaseCommand {
 
 
 	private final int SUCCESS = Command.SINGLE_SUCCESS;
