@@ -1,6 +1,5 @@
 package me.poxel.punishplugin;
 
-import co.aikar.commands.BaseCommand;
 import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import me.poxel.punishplugin.command.RootCommand;
@@ -14,27 +13,17 @@ public final class PunishPlugin extends JavaPlugin {
 
 	@Getter private static PunishPlugin instance;
 
-	@Getter private final PaperCommandManager manager = new PaperCommandManager(this);
+	@Getter private PaperCommandManager manager;
 
 	@Override
 	public void onEnable() {
 		this.getLogger().info("Loading PunishPlugin...");
 		instance = this;
 		loadConfig();
-		registerCommands(new RootCommand());
+		manager = new PaperCommandManager(this);
+		manager.registerCommand(new RootCommand());
+		manager.enableUnstableAPI("help");
 	}
-
-	private void registerCommands(final BaseCommand command) {
-		this.getLogger().info("Registering command: " + command.getName());
-		this.manager.registerCommand(command);
-	}
-
-	@SuppressWarnings("UnstableApiUsage")
-	//	private void registerCommand(final LiteralCommandNode<CommandSourceStack> command) {
-	//		this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
-	//			commands.registrar().register(command);
-	//		});
-	//	}
 
 	private void loadConfig() {
 		this.getLogger().info("Loading config...");
