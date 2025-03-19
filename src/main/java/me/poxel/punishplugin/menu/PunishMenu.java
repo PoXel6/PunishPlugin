@@ -1,6 +1,7 @@
 package me.poxel.punishplugin.menu;
 
 import dev.triumphteam.gui.builder.item.ItemBuilder;
+import dev.triumphteam.gui.guis.Gui;
 import me.poxel.punishplugin.PunishPlugin;
 import me.poxel.punishplugin.api.menu.BaseMenu;
 import me.poxel.punishplugin.api.menu.Menu;
@@ -11,13 +12,16 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public final class PunishMenu extends BaseMenu {
 
 
 	public static void update() {
-		new PunishMenu().getInventory().update();
+		var menu = new PunishMenu().getInventory();
+		Optional<Gui> optMenu = Optional.of(menu);
+		optMenu.ifPresent(Gui::update);
 	}
 
 	@Override
@@ -58,9 +62,10 @@ public final class PunishMenu extends BaseMenu {
 	}
 
 	private void setSlotActions(final Menu menu, final int slot) {
-		getInventory().addSlotAction(slot, event -> {
-			menu.open((Player) event.getWhoClicked());
-		});
+		getInventory().addSlotAction(
+				slot, event -> {
+					menu.open((Player) event.getWhoClicked());
+				});
 	}
 
 	private void logPunishmentDetails(List<String> list) {
