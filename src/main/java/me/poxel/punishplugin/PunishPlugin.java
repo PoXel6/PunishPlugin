@@ -2,7 +2,7 @@ package me.poxel.punishplugin;
 
 import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
-import me.poxel.punishplugin.command.RootCommand;
+import me.poxel.punishplugin.command.PunishCommand;
 import me.poxel.punishplugin.config.ConfigManager;
 import me.poxel.punishplugin.config.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,7 +21,7 @@ public final class PunishPlugin extends JavaPlugin {
 		instance = this;
 		loadConfig();
 		manager = new PaperCommandManager(this);
-		manager.registerCommand(new RootCommand());
+		manager.registerCommand(new PunishCommand());
 		manager.enableUnstableAPI("help");
 	}
 

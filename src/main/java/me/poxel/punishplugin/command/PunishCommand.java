@@ -15,14 +15,14 @@ import org.bukkit.entity.Player;
 @SuppressWarnings("unused")
 @CommandAlias("p")
 @CommandPermission("punish")
-public class RootCommand extends BaseCommand {
+public class PunishCommand extends BaseCommand {
 
 
 	private final int SUCCESS = Command.SINGLE_SUCCESS;
 	private final int ERROR = 0;
 
 	@SuppressWarnings("deprecation")
-	public RootCommand() {
+	public PunishCommand() {
 		super("punish");
 	}
 
