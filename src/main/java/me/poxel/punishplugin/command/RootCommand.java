@@ -26,52 +26,43 @@ public class RootCommand extends BaseCommand {
 		super("punish");
 	}
 
-	@Default
 	@CommandPermission("punish.punish")
-	public void onCommand(CommandSender executor, Player target) {
+	public void onPunish(CommandSender executor, Player target) {
 		if (executor instanceof Player player) {
 			var message = Component.text("Targeted Player: " + target.displayName()).color(NamedTextColor.RED);
 			player.sendMessage(message);
 			new PunishMenu().open(player);
 		}
 	}
-	//
-	//	@CommandPermission("punish.reload")
-	//	@CommandAlias("rl")
-	//	@Subcommand("reload")
-	//	@Syntax("")
-	//	@Description("")
-	//	public int onReload(CommandSender sender) {
-	//		return (onReloadConfig(sender) == SUCCESS) && (onReloadGui(sender) == SUCCESS) ? SUCCESS : ERROR;
-	//	}
-	//
-	//	@CommandPermission("punish.reload.config")
-	//	@CommandAlias("rl cfg")
-	//	@Subcommand("reload config")
-	//	@Syntax("")
-	//	@Description("")
-	//	public int onReloadConfig(CommandSender sender) {
-	//		ConfigManager.reload(PunishPlugin.getInstance());
-	//		sender.sendMessage(Component.text("Config has been reloaded!").color(NamedTextColor.GREEN));
-	//		return Command.SINGLE_SUCCESS;
-	//	}
-	//
-	//	@CommandPermission("punish.reload.gui")
-	//	@CommandAlias("rl gui")
-	//	@Subcommand("reload gui")
-	//	@Syntax("")
-	//	@Description("")
-	//	public int onReloadGui(CommandSender sender) {
-	//		PunishMenu.update();
-	//		sender.sendMessage(Component.text("Gui has been reloaded!").color(NamedTextColor.GREEN));
-	//		return SUCCESS;
-	//	}
-	//
-	//	@CommandPermission("punish.punish")
-	//	@Syntax("")
-	//	@Description("")
-	//	@HelpCommand
-	//	public int onHelp(CommandSender sender) {
-	//		return SUCCESS;
-	//	}
+
+	@CommandPermission("punish.reload")
+	@CommandAlias("rl")
+	@Subcommand("reload")
+	@Syntax("")
+	@Description("")
+	public int onReload(CommandSender sender) {
+		return (onReloadConfig(sender) == SUCCESS) && (onReloadGui(sender) == SUCCESS) ? SUCCESS : ERROR;
+	}
+
+	@CommandPermission("punish.reload.config")
+	@CommandAlias("rl cfg")
+	@Subcommand("reload config")
+	@Syntax("")
+	@Description("")
+	public int onReloadConfig(CommandSender sender) {
+		ConfigManager.reload(PunishPlugin.getInstance());
+		sender.sendMessage(Component.text("Config has been reloaded!").color(NamedTextColor.GREEN));
+		return SUCCESS;
+	}
+
+	@CommandPermission("punish.reload.gui")
+	@CommandAlias("rl gui")
+	@Subcommand("reload gui")
+	@Syntax("")
+	@Description("")
+	public int onReloadGui(CommandSender sender) {
+		PunishMenu.update();
+		sender.sendMessage(Component.text("Gui has been reloaded!").color(NamedTextColor.GREEN));
+		return SUCCESS;
+	}
 }
