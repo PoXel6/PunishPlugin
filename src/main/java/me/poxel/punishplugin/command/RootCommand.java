@@ -34,6 +34,7 @@ public class RootCommand extends BaseCommand {
 
 	}
 
+	@CommandCompletion("@players")
 	@CommandPermission("punish.punish")
 	public void onPunish(CommandSender executor, Player target) {
 		if (executor instanceof Player player) {
