@@ -26,6 +26,14 @@ public class RootCommand extends BaseCommand {
 		super("punish");
 	}
 
+	@Default
+	@CommandAlias("h")
+	@HelpCommand
+	@CommandPermission("punish")
+	public void onCommand(CommandSender sender) {
+
+	}
+
 	@CommandPermission("punish.punish")
 	public void onPunish(CommandSender executor, Player target) {
 		if (executor instanceof Player player) {
