@@ -1,6 +1,7 @@
 package me.poxel.punishplugin.command;
 
 import co.aikar.commands.BaseCommand;
+import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import com.mojang.brigadier.Command;
 import me.poxel.punishplugin.PunishPlugin;
@@ -31,7 +32,8 @@ public final class PunishCommand extends BaseCommand {
 	@CommandAlias("h")
 	@CommandPermission("punish")
 	@Description("Displays the help menu.")
-	public void onCommand(CommandSender sender) {
+	public void onCommand(CommandSender sender, CommandHelp help) {
+		help.showHelp();
 	}
 
 	@Syntax("<player>")
