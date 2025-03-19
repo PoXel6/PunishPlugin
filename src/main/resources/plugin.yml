@@ -2,9 +2,3 @@ name: PunishPlugin2.0
 version: '1.0-SNAPSHOT'
 main: me.poxel.punishplugin.PunishPlugin
 api-version: '1.21'
-commands:
-  punish:
-    description: opens punishment menu
-    usage: /punish <username>
-    permission: punish
-    aliases: p
