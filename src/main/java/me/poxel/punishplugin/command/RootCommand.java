@@ -27,10 +27,8 @@ public class RootCommand extends BaseCommand {
 	}
 
 	@Default
-	@CommandCompletion("@players")
-	//	@Syntax("")
-	//	@Description("")
-	public void onPunish(CommandSender executor, Player target) {
+	@CommandPermission("punish.punish")
+	public void onCommand(CommandSender executor, Player target) {
 		if (executor instanceof Player player) {
 			var message = Component.text("Targeted Player: " + target.displayName()).color(NamedTextColor.RED);
 			player.sendMessage(message);
