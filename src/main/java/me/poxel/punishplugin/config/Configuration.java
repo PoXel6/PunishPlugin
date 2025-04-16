@@ -2,7 +2,6 @@ package me.poxel.punishplugin.config;
 
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
@@ -26,8 +25,8 @@ public final class Configuration {
 	}
 
 	private static List<List<String>> fetchPunishments(FileConfiguration config) {
-		final List<List<String>> punishments = new ArrayList<>();
-		final ConfigurationSection punishSection = config.getConfigurationSection("Punishments");
+		final var punishments = new ArrayList<List<String>>();
+		final var punishSection = config.getConfigurationSection("Punishments");
 		final var keys = punishSection != null
 		                 ? punishSection.getKeys(true)
 		                 : new HashSet<String>();
