@@ -1,12 +1,9 @@
 package me.poxel.punishplugin.config;
 
 import lombok.Getter;
-import me.poxel.punishplugin.PunishPlugin;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -16,8 +13,6 @@ import java.util.List;
 public final class Configuration {
 
 
-	private final static GsonComponentSerializer gson = GsonComponentSerializer.gson();
-	private static final Logger logger = PunishPlugin.getInstance().getSLF4JLogger();
 	@Getter private static List<List<String>> punishments;
 	@Getter private static Component punishMenuName;
 	@Getter private static Component BanMenuName;
