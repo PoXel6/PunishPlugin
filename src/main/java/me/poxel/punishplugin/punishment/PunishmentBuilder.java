@@ -1,13 +1,15 @@
 package me.poxel.punishplugin.punishment;
 
-import lombok.Getter;
+import lombok.Builder;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.joda.time.Duration;
 
 
-@Getter
+@Builder(setterPrefix = "set")
 public class PunishmentBuilder {
+
+
 	private Duration duration;
 	private Component reason;
 	private Material displayItem;
