@@ -9,10 +9,13 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 
 public final class Configuration {
+
+
 	private final static GsonComponentSerializer gson = GsonComponentSerializer.gson();
 	private static final Logger logger = PunishPlugin.getInstance().getSLF4JLogger();
 	@Getter private static List<List<String>> punishments;
@@ -30,8 +33,12 @@ public final class Configuration {
 	private static List<List<String>> fetchPunishments(FileConfiguration config) {
 		final List<List<String>> punishments = new ArrayList<>();
 		final ConfigurationSection punishSection = config.getConfigurationSection("Punishments");
-		final var keys = punishSection.getKeys(true);
-		keys.forEach(key -> punishments.add(punishSection.getStringList(key)));
+		final var keys = punishSection != null
+		                 ? punishSection.getKeys(true)
+		                 : new HashSet<String>();
+		keys.forEach(key -> punishments.add(punishSection != null
+		                                    ? punishSection.getStringList(key)
+		                                    : new ArrayList<>()));
 		return punishments;
 	}
 }
