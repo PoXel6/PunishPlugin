@@ -15,24 +15,9 @@ public class PunishmentBuilder {
 	private Material displayItem;
 	private PunishmentType mode;
 
-	public PunishmentBuilder setDuration(final Duration duration) {
-		this.duration = duration;
-		return this;
-	}
-
-	public PunishmentBuilder setReason(final Component reason) {
-		this.reason = reason;
-		return this;
-	}
-
-	public PunishmentBuilder setDisplayItem(final Material displayItem) {
-		this.displayItem = displayItem;
-		return this;
-	}
-
-	public PunishmentBuilder setMode(final PunishmentType mode) {
-		this.mode = mode;
-		return this;
+	@Override
+	public String toString() {
+		return String.format("Mode: %s\nDuration: %s\nReason: %s", mode, duration, reason);
 	}
 
 	public Punishment build() {
