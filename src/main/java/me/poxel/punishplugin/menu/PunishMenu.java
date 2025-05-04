@@ -64,5 +64,15 @@ public final class PunishMenu extends BaseMenu {
 		getInventory().addSlotAction(slot, event -> menu.open((Player) event.getWhoClicked()));
 	}
 
+	private GuiItem createMenuItem(final Material displayItem, final Component name) {
+		final var lore = (Component) List.of(Component.text(String.format("click here to open the %s.", name)));
+		return ItemBuilder
+				.from(displayItem)
+				.name(name)
+				.lore(lore)
+				.glow(true)
+				.asGuiItem();
+	}
+
 }
 
