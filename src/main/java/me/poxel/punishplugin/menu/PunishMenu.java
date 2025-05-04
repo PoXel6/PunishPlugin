@@ -10,7 +10,6 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +41,9 @@ public final class PunishMenu extends BaseMenu {
 	public void setMenuItem() {
 		for (List<String> list : Configuration.getPunishments()) {
 			logPunishmentDetails(list);
-			var lore = getLore(list);
+			final var lore = (Component) List.of(
+					Component.text("Reason: " + list.get(2)),
+					Component.text("Duration: " + list.get(3)));
 			getInventory().addItem(ItemBuilder.from(Material.getMaterial(list.get(0)))
 			                                  .name(Component.text(list.get(1)))
 			                                  .lore(lore)
@@ -57,13 +58,6 @@ public final class PunishMenu extends BaseMenu {
 		final int muteMenuSlot = 7;
 		setSlotActions(new BanMenu(), banMenuSlot);
 		setSlotActions(new MuteMenu(), muteMenuSlot);
-	}
-
-	private ArrayList<Component> getLore(final List<String> list) {
-		var lore = new ArrayList<Component>();
-		lore.add(Component.text("Reason: " + list.get(2)));
-		lore.add(Component.text("Duration: " + list.get(3)));
-		return lore;
 	}
 
 	private void setSlotActions(final Menu menu, final int slot) {
