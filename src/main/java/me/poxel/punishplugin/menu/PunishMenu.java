@@ -64,12 +64,5 @@ public final class PunishMenu extends BaseMenu {
 		getInventory().addSlotAction(slot, event -> menu.open((Player) event.getWhoClicked()));
 	}
 
-	private void logPunishmentDetails(List<String> list) {
-		final var logger = PunishPlugin.getInstance().getSLF4JLogger();
-		logger.debug("Display Item: {}", list.get(0));
-		logger.debug("Name: {}", list.get(1));
-		logger.debug("Reason: {}", list.get(2));
-		logger.debug("Duration: {}", list.get(3));
-	}
 }
 
