@@ -2,6 +2,7 @@ package me.poxel.punishplugin.menu;
 
 import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;
+import dev.triumphteam.gui.guis.GuiItem;
 import me.poxel.punishplugin.PunishPlugin;
 import me.poxel.punishplugin.api.menu.BaseMenu;
 import me.poxel.punishplugin.api.menu.Menu;
@@ -39,16 +40,8 @@ public final class PunishMenu extends BaseMenu {
 
 	@Override
 	public void setMenuItem() {
-		for (List<String> list : Configuration.getPunishments()) {
-			logPunishmentDetails(list);
-			final var lore = (Component) List.of(
-					Component.text("Reason: " + list.get(2)),
-					Component.text("Duration: " + list.get(3)));
-			getInventory().addItem(ItemBuilder.from(Material.getMaterial(list.get(0)))
-			                                  .name(Component.text(list.get(1)))
-			                                  .lore(lore)
-			                                  .asGuiItem());
-		}
+		getInventory().addItem(createMenuItem(Material.WOODEN_AXE, Configuration.getBanMenuName()));
+		getInventory().addItem(createMenuItem(Material.NOTE_BLOCK, Configuration.getMuteMenuName()));
 	}
 
 	@Override
