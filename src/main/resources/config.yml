@@ -1,52 +1,77 @@
-# PERMISSIONS:
-# punish: Permission for global access to punish and reload the plugin.
-# punish.punish: Permission to punish another player.
-# punish.reload: Permission to reload the plugin (both config and GUI).
-# punish.reload.config: Permission to reload the configurations.
-# punish.reload.gui: Permission to reload and update the punishment GUI.
-#
-#
-#
-# MENUS:
+PERMISSIONS:
+  - "punish"                # Permission for global access to punish and reload the plugin.
+  - "punish.punish"         # Permission to punish another player.
+  - "punish.reload"         # Permission to reload the plugin (both config and GUI).
+  - "punish.reload.config"  # Permission to reload the configurations.
+  - "punish.reload.gui"     # Permission to reload and update the punishment GUI.
+
+
+
 # Menus use miniMessage from the adventure API for titles.
 # Use this website to preview your message:
-# Menus use miniMessage from adventure API for title.
-# Use this website to preview your message.
 # https://webui.advntr.dev/
 Menus:
   Punish: '<light_purple><b>Punish</b></light_purple> <gray>Menu</gray>'
   Ban: '<b><red>Ban</red></b> <gray>Menu</gray>'
   Mute: '<b><green>Mute</green></b> <gray>Menu</gray>'
+
+
+
+# Add punishments like this: (pay attention to capitalization)
+# Punishments:
+#   mode:
+#     punishment: Key, isn't used for anything directly.
+#       - ITEM
+#       - Name
+#       - Reason
+#       - duration (check line:47 to see valid durations)
 #
+#   - Supported modes are:
+#     - ban
+#     - mute
 #
-#
-# Punishments
-# Add punishments like this:
-#   Swearing: Key, isn't used for anything directly.
-#     — Item What item to display as punishment on the punishment Menu. Example: STONE.
-#       NOTE: All Material IDs are supported from 1.8x-1.20.×. Recommended: https://minecraftitemids.com/
-#     — Name How you want it to appear. Example: Swearing.
-#     — Reason What the player sees on the punishment screen. Example: Unfair Advantage.
-#     — Duration How long the punishment lasts. Valid durations are:
-#     - Mode (Ban / Mute / Kick)
+#     - Item: The display item for the punishment in the punishment menu.
+#       Example: STONE.
+#       All Material IDs are supported from 1.8x-1.20.×. Recommended: https://minecraftitemids.com/
+
+#     - Name: How you want it to appear.
+#       Example: Swearing.
+
+#     - Reason: Rules that has been broken by the player. What the player sees on the punishment screen.
+#       Example: Unfair Advantage.
+
+#     - Duration: How long the punishment lasts.
+#       If left empty, it will be permanent.
+#       Valid durations are:
+#       1s for 1 second
+#       1m for 1 minute
+#       1h for 1 hour
+#       1d for 1 day
+#       1W for 1 week
+#       1M for 1 month
+#       1Y for 1 year
+
+
+
 Punishments:
-  swearing:
-    - "SKELETON_SKULL"
-    - "swearing"
-    - "Swearing / Toxicity / Spamming"
-    - "1d"
-  cheat:
-    - "WOODEN_AXE"
-    - "cheat"
-    - "Unfair Advantage"
-    - "7d"
-  bad-username:
-    - "NAME_TAG"
-    - "Bad Username"
-    - "Innaproperiate Username"
-    - "Permanent"
-  bug-abuse:
-    - "STONE"
-    - "Bug Abuse"
-    - "Bug Abuse"
-    - "Permanent"
+  mute:
+    swearing:
+      - "SKELETON_SKULL"
+      - "swearing"
+      - "Swearing / Toxicity / Spamming"
+      - "1d"
+  ban:
+    cheat:
+      - "WOODEN_AXE"
+      - "cheat"
+      - "Unfair Advantage"
+      - "7d"
+    bad-username:
+      - "NAME_TAG"
+      - "Bad Username"
+      - "Inappropriate Username"
+    bug-abuse:
+      - "STONE"
+      - "Bug Abuse"
+      - "Bug Abuse"
+      - "Permanent"
