@@ -12,10 +12,10 @@ public class MuteListener implements Listener {
 	@EventHandler
 	public void onAsyncChat(AsyncChatEvent event) {
 		final var player = event.getPlayer();
-		final var messageSignature = event.signedMessage().signature();
-		var isMute = Mute.muteList.contains(player);
+		final var isMute = Mute.muteList.contains(player);
 		if (isMute) {
 			event.setCancelled(true);
+			final var messageSignature = event.signedMessage().signature();
 			if (messageSignature == null)
 				return;
 			player.deleteMessage(messageSignature);
