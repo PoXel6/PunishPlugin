@@ -12,6 +12,8 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Optional;
+
 
 @SuppressWarnings("unused")
 @CommandAlias("p")
@@ -42,7 +44,9 @@ public final class PunishCommand extends BaseCommand {
 	@Description("Punishes the player provided as an argument.")
 	public void onPunish(CommandSender executor, Player target) {
 		if (executor instanceof Player player) {
-			var message = Component.text("Targeted Player: " + target.displayName()).color(NamedTextColor.RED);
+			final var targetName = Optional.of(target.displayName())
+			                               .orElse(Component.text("Target's display name is Null."));
+			final var message = Component.text("Targeted Player: " + targetName).color(NamedTextColor.RED);
 			player.sendMessage(message);
 			new PunishMenu().open(player);
 		}
