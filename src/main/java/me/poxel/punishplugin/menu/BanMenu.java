@@ -5,26 +5,9 @@ import me.poxel.punishplugin.config.Configuration;
 import net.kyori.adventure.text.Component;
 
 
-public class BanMenu extends BaseMenu {
+public class BanMenu extends BaseMenu implements Displayable {
 
-	//		for (List<String> list : Configuration.getPunishments()) {
-	//		logPunishmentDetails(list);
-	//		final var lore = (Component) List.of(
-	//				Component.text("Reason: " + list.get(2)),
-	//				Component.text("Duration: " + list.get(3)));
-	//		getInventory().addItem(ItemBuilder.from(Material.getMaterial(list.get(0)))
-	//		                                  .name(Component.text(list.get(1)))
-	//		                                  .lore(lore)
-	//		                                  .asGuiItem());
-	//	}
 
-	//	private void logPunishmentDetails(List<String> list) {
-	//		final var logger = PunishPlugin.getInstance().getSLF4JLogger();
-	//		logger.debug("Display Item: {}", list.get(0));
-	//		logger.debug("Name: {}", list.get(1));
-	//		logger.debug("Reason: {}", list.get(2));
-	//		logger.debug("Duration: {}", list.get(3));
-	//	}
 	@Override
 	public int getRows() {
 		return 6;
@@ -37,6 +20,7 @@ public class BanMenu extends BaseMenu {
 
 	@Override
 	public void setMenuItem() {
+		punishmentsAsItem(Configuration.getBanPunishments()).forEach(item -> getInventory().addItem(item));
 	}
 
 	@Override
