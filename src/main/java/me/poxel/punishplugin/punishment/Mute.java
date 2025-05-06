@@ -1,5 +1,6 @@
 package me.poxel.punishplugin.punishment;
 
+import lombok.Getter;
 import org.bukkit.entity.Player;
 
 import java.util.LinkedList;
@@ -9,7 +10,7 @@ import java.util.List;
 public class Mute implements Punishable {
 
 
-	public static final List<Player> muteList = new LinkedList<>();
+	@Getter private static final List<Player> muteList = new LinkedList<>();
 
 	@Override
 	public void punish() {
