@@ -3,30 +3,11 @@ package me.poxel.punishplugin.punishment;
 import org.bukkit.entity.Player;
 
 
-public final class Ban extends PunishmentBuilder implements Punishment {
+public final class Ban implements Punishable {
+
 
 	@Override
-	public void setReason() {
+	public void punish() {
 
-	}
-
-	@Override
-	public Player getTarget() {
-		return null;
-	}
-
-	@Override
-	public void setTarget() {
-
-	}
-
-	@Override
-	public void setDuration() {
-
-	}
-
-	@Override
-	public void setMode() {
-		setMode(PunishmentType.BAN);
 	}
 }

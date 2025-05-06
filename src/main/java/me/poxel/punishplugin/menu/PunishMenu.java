@@ -4,8 +4,6 @@ import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import me.poxel.punishplugin.PunishPlugin;
-import me.poxel.punishplugin.api.menu.BaseMenu;
-import me.poxel.punishplugin.api.menu.Menu;
 import me.poxel.punishplugin.config.Configuration;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;

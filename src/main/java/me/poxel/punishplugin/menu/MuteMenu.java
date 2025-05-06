@@ -1,6 +1,5 @@
 package me.poxel.punishplugin.menu;
 
-import me.poxel.punishplugin.api.menu.BaseMenu;
 import me.poxel.punishplugin.config.Configuration;
 import net.kyori.adventure.text.Component;
 

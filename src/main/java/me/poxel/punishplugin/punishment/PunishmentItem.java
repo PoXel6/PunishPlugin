@@ -7,7 +7,7 @@ import org.bukkit.Material;
 
 @Getter
 @RequiredArgsConstructor
-public enum PunishItems {
+public enum PunishmentItem {
 	BAN(Material.WOODEN_AXE),
 	MUTE(Material.NOTE_BLOCK);
 
