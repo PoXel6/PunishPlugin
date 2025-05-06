@@ -11,8 +11,7 @@ shadowJar {
     relocate("co.aikar.commands", "me.poxel.punishplugin.acf")
     relocate("co.aikar.locales", "me.poxel.punishplugin.locales")
 
-    destinationDirectory = file("/mnt/c/Users/pox/AppData/Roaming/Fork/servers/Lobby/plugins")
-    destinationDirectory = file("/mnt/c/Users/pox/AppData/Roaming/Fork/servers/Server/plugins")
+    destinationDirectory = file("/home/conch/MCServer/Server/plugins")
 }
 
 repositories {
