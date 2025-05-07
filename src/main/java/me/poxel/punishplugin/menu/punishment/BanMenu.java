@@ -6,7 +6,7 @@ import me.poxel.punishplugin.menu.Displayable;
 import net.kyori.adventure.text.Component;
 
 
-public class BanMenu extends BaseMenu implements Displayable {
+public final class BanMenu extends BaseMenu implements Displayable {
 
 
 	@Override

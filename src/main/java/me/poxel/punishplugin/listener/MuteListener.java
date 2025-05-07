@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 
-public class MuteListener implements Listener {
+public final class MuteListener implements Listener {
 
 
 	@EventHandler

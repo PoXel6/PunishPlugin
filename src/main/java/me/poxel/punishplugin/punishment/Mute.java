@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class Mute implements Punishable {
+public final class Mute implements Punishable {
 
 
 	@Getter private static final List<Player> muteList = new LinkedList<>();

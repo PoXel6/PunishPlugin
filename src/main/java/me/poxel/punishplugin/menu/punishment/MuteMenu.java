@@ -5,7 +5,7 @@ import me.poxel.punishplugin.menu.BaseMenu;
 import net.kyori.adventure.text.Component;
 
 
-public class MuteMenu extends BaseMenu {
+public final class MuteMenu extends BaseMenu {
 
 
 	@Override
