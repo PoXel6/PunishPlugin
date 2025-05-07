@@ -5,6 +5,8 @@ import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import me.poxel.punishplugin.PunishPlugin;
 import me.poxel.punishplugin.config.Configuration;
+import me.poxel.punishplugin.menu.punishment.BanMenu;
+import me.poxel.punishplugin.menu.punishment.MuteMenu;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

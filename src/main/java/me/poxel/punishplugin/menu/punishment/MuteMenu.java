@@ -1,10 +1,11 @@
-package me.poxel.punishplugin.menu;
+package me.poxel.punishplugin.menu.punishment;
 
 import me.poxel.punishplugin.config.Configuration;
+import me.poxel.punishplugin.menu.BaseMenu;
 import net.kyori.adventure.text.Component;
 
 
-public class BanMenu extends BaseMenu implements Displayable {
+public class MuteMenu extends BaseMenu {
 
 
 	@Override
@@ -14,15 +15,16 @@ public class BanMenu extends BaseMenu implements Displayable {
 
 	@Override
 	public Component getTitle() {
-		return Configuration.getBanMenuName();
+		return Configuration.getMuteMenuName();
 	}
 
 	@Override
 	public void setMenuItem() {
-		punishmentsAsItem(Configuration.getBanPunishments()).forEach(item -> getInventory().addItem(item));
+
 	}
 
 	@Override
 	public void setAction() {
+
 	}
 }
