@@ -6,7 +6,7 @@ import co.aikar.commands.annotation.*;
 import com.mojang.brigadier.Command;
 import me.poxel.punishplugin.PunishPlugin;
 import me.poxel.punishplugin.config.ConfigManager;
-import me.poxel.punishplugin.menu.PunishMenu;
+import me.poxel.punishplugin.menu.punishment.PunishMenu;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
