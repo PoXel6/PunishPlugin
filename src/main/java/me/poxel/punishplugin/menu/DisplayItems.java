@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface Displayable {
+public interface DisplayItems {
 
 
-	default List<GuiItem> punishmentsAsItem(ConfigurationSection section) {
+	static List<GuiItem> punishments(ConfigurationSection section) {
 		final var listItem = new ArrayList<GuiItem>();
 		for (final String key : section.getKeys(true)) {
 			final var list = section.getStringList(key);
