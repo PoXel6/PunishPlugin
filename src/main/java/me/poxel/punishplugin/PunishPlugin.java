@@ -11,8 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-
 
 public final class PunishPlugin extends JavaPlugin {
 
@@ -32,16 +30,18 @@ public final class PunishPlugin extends JavaPlugin {
 		registerListeners(new MuteListener());
 	}
 
-	private void registerListeners(@NotNull Listener... listeners) {
+	private void registerListeners(@NotNull final Listener... listeners) {
 		this.getLogger().info("Loading Listeners...");
-		Arrays.stream(listeners).forEach(listener -> {
+		for (final var listener : listeners) {
 			getServer().getPluginManager().registerEvents(listener, this);
-		});
+		}
 	}
 
-	private void registerCommands(@NotNull BaseCommand... commands) {
+	private void registerCommands(@NotNull final BaseCommand... commands) {
 		this.getLogger().info("Loading Commands...");
-		Arrays.stream(commands).forEach(command -> manager.registerCommand(command));
+		for (final var command : commands) {
+			manager.registerCommand(command);
+		}
 	}
 
 	private void loadConfig() {
