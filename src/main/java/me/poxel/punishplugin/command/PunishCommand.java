@@ -72,8 +72,7 @@ public final class PunishCommand extends BaseCommand {
 	@Description("reloads gui.")
 	@CommandPermission("punish.reload.gui")
 	public int onReloadGui(CommandSender sender) {
-		PunishMenu.update();
-		sender.sendMessage(Component.text("Gui has been reloaded!").color(NamedTextColor.GREEN));
+		sender.sendMessage(Component.text("Not implemented yet!").color(NamedTextColor.GREEN));
 		return SUCCESS;
 	}
 }
