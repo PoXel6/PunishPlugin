@@ -36,7 +36,6 @@ compileJava {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
 
-    implementation("joda-time:joda-time:2.3")
     implementation("dev.triumphteam:triumph-gui:3.1.11")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
 
