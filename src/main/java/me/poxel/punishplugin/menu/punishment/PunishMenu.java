@@ -1,17 +1,15 @@
 package me.poxel.punishplugin.menu.punishment;
 
-import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;
-import dev.triumphteam.gui.guis.GuiItem;
 import me.poxel.punishplugin.PunishPlugin;
 import me.poxel.punishplugin.config.Configuration;
 import me.poxel.punishplugin.menu.BaseMenu;
+import me.poxel.punishplugin.menu.DisplayItems;
 import me.poxel.punishplugin.menu.Menu;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-import java.util.List;
 import java.util.Optional;
 
 
@@ -40,8 +38,10 @@ public final class PunishMenu extends BaseMenu {
 
 	@Override
 	public void setMenuItem() {
-		getInventory().addItem(createMenuItem(Material.WOODEN_AXE, Configuration.getBanMenuName()));
-		getInventory().addItem(createMenuItem(Material.NOTE_BLOCK, Configuration.getMuteMenuName()));
+		final var banMenuItem = DisplayItems.punishmentMenu(Material.WOODEN_AXE, Configuration.getBanMenuName());
+		final var muteMenuItem = DisplayItems.punishmentMenu(Material.NOTE_BLOCK, Configuration.getMuteMenuName());
+		getInventory().addItem(banMenuItem);
+		getInventory().addItem(muteMenuItem);
 	}
 
 	@Override
@@ -56,16 +56,5 @@ public final class PunishMenu extends BaseMenu {
 	private void setSlotActions(final Menu menu, final int slot) {
 		getInventory().addSlotAction(slot, event -> menu.open((Player) event.getWhoClicked()));
 	}
-
-	private GuiItem createMenuItem(final Material displayItem, final Component name) {
-		final var lore = (Component) List.of(Component.text(String.format("click here to open the %s.", name)));
-		return ItemBuilder
-				.from(displayItem)
-				.name(name)
-				.lore(lore)
-				.glow(true)
-				.asGuiItem();
-	}
-
 }
 
