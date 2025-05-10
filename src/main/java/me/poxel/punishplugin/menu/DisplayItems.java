@@ -7,7 +7,6 @@ import net.kyori.adventure.text.format.Style;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,16 +28,6 @@ public interface DisplayItems {
 			listItem.add(item);
 		}
 		return listItem;
-	}
-
-	static @NotNull GuiItem punishmentMenu(@NotNull Material displayItem, @NotNull Component menuName) {
-		final var lore = Component.text(String.format("click here to open the %s.", menuName));
-		return ItemBuilder
-				.from(displayItem)
-				.name(menuName)
-				.lore(lore)
-				.glow(true)
-				.asGuiItem();
 	}
 
 
