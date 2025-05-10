@@ -16,10 +16,14 @@ public final class Configuration {
 	@Getter private static ConfigurationSection banPunishments;
 
 	public static void loadConfig(FileConfiguration config) {
+		loadMenuNames(config);
+		loadPunishments(config);
+	}
+
+	private static void loadMenuNames(FileConfiguration config) {
 		punishMenuName = ConfigManager.deserialize(config.getString("Menus.Punish", "Punish Menu"));
 		BanMenuName = ConfigManager.deserialize(config.getString("Menus.Ban", "Ban Menu"));
 		MuteMenuName = ConfigManager.deserialize(config.getString("Menus.Mute", "Mute Menu"));
-		loadPunishments(config);
 	}
 
 	private static void loadPunishments(FileConfiguration config) {
