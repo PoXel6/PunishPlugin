@@ -3,7 +3,7 @@ package me.poxel.punishplugin.menu.punishment;
 import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.GuiItem;
 import me.poxel.punishplugin.config.Configuration;
-import me.poxel.punishplugin.menu.BaseMenu;
+import me.poxel.punishplugin.menu.SimpleMenu;
 import me.poxel.punishplugin.punishment.PunishmentType;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 
 
-public final class PunishMenu extends BaseMenu {
+public final class PunishMenu extends SimpleMenu {
 
 
 	@Override

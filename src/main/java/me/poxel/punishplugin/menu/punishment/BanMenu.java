@@ -1,12 +1,12 @@
 package me.poxel.punishplugin.menu.punishment;
 
 import me.poxel.punishplugin.config.Configuration;
-import me.poxel.punishplugin.menu.BaseMenu;
 import me.poxel.punishplugin.menu.DisplayItems;
+import me.poxel.punishplugin.menu.SimpleMenu;
 import net.kyori.adventure.text.Component;
 
 
-public final class BanMenu extends BaseMenu {
+public final class BanMenu extends SimpleMenu {
 
 
 	@Override

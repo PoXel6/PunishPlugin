@@ -2,7 +2,7 @@ package me.poxel.punishplugin.punishment;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import me.poxel.punishplugin.menu.BaseMenu;
+import me.poxel.punishplugin.menu.SimpleMenu;
 import me.poxel.punishplugin.menu.punishment.BanMenu;
 import me.poxel.punishplugin.menu.punishment.MuteMenu;
 import org.bukkit.Material;
@@ -21,6 +21,6 @@ public enum PunishmentType {
 	//	WARN(),
 	//	IP_BAN(),
 	//	IP_MUTE();
-	private final BaseMenu menu;
+	private final SimpleMenu menu;
 	private final Material item;
 }

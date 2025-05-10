@@ -4,7 +4,7 @@ import dev.triumphteam.gui.guis.Gui;
 import org.bukkit.entity.Player;
 
 
-public abstract class BaseMenu implements Menu {
+public abstract class SimpleMenu implements Menu {
 
 
 	private Gui inventory;
