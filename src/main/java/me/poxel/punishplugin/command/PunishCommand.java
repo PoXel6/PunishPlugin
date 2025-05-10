@@ -43,13 +43,14 @@ public final class PunishCommand extends BaseCommand {
 	@CommandPermission("punish.punish")
 	@Description("Punishes the player provided as an argument.")
 	public void onPunish(CommandSender executor, Player target) {
-		if (executor instanceof Player player) {
-			final var targetName = Optional.of(target.displayName())
-			                               .orElse(Component.text("Target's display name is Null."));
-			final var message = Component.text("Targeted Player: " + targetName).color(NamedTextColor.RED);
-			player.sendMessage(message);
-			new PunishMenu().open(player);
+		if (!(executor instanceof Player player)) {
+			return;
 		}
+		final var targetName = Optional.of(target.displayName())
+		                               .orElse(Component.text("Target's display name is Null."));
+		final var message = Component.text("Targeted Player: " + targetName).color(NamedTextColor.RED);
+		player.sendMessage(message);
+		new PunishMenu().open(player);
 	}
 
 	@Subcommand("reload|rl")
