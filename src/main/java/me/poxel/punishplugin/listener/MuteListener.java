@@ -13,13 +13,15 @@ public final class MuteListener implements Listener {
 	public void onAsyncChat(AsyncChatEvent event) {
 		final var player = event.getPlayer();
 		final var isMute = Mute.getMuteList().contains(player);
-		if (isMute) {
-			event.setCancelled(true);
-			final var messageSignature = event.signedMessage().signature();
-			if (messageSignature == null)
-				return;
-			player.deleteMessage(messageSignature);
+		if (!isMute) {
+			return;
 		}
+		event.setCancelled(true);
+		final var messageSignature = event.signedMessage().signature();
+		if (messageSignature == null) {
+			return;
+		}
+		player.deleteMessage(messageSignature);
 	}
 
 
