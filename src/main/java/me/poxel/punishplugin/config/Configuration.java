@@ -21,14 +21,14 @@ public final class Configuration {
 	}
 
 	private static void loadMenuNames(FileConfiguration config) {
-		punishMenuName = ConfigManager.deserialize(config.getString("Menus.Punish", "Punish Menu"));
-		BanMenuName = ConfigManager.deserialize(config.getString("Menus.Ban", "Ban Menu"));
-		MuteMenuName = ConfigManager.deserialize(config.getString("Menus.Mute", "Mute Menu"));
+		punishMenuName = ConfigManager.deserialize(config.getString("MENU.punish", "Punish Menu"));
+		BanMenuName = ConfigManager.deserialize(config.getString("MENU.ban", "Ban Menu"));
+		MuteMenuName = ConfigManager.deserialize(config.getString("MENU.mute", "Mute Menu"));
 	}
 
 	private static void loadPunishments(FileConfiguration config) {
-		mutePunishments = config.getConfigurationSection("Punishments.mute");
-		banPunishments = config.getConfigurationSection("Punishments.ban");
+		mutePunishments = config.getConfigurationSection("PUNISHMENT.mute");
+		banPunishments = config.getConfigurationSection("PUNISHMENT.ban");
 	}
 
 }

@@ -1,4 +1,4 @@
-PERMISSIONS:
+PERMISSION:
   - "punish"                # Permission for global access to punish and reload the plugin.
   - "punish.punish"         # Permission to punish another player.
   - "punish.reload"         # Permission to reload the plugin (both config and GUI).
@@ -10,15 +10,15 @@ PERMISSIONS:
 # Menus use miniMessage from the adventure API for titles.
 # Use this website to preview your message:
 # https://webui.advntr.dev/
-Menus:
-  Punish: '<light_purple><b>Punish</b></light_purple> <gray>Menu</gray>'
-  Ban: '<b><red>Ban</red></b> <gray>Menu</gray>'
-  Mute: '<b><green>Mute</green></b> <gray>Menu</gray>'
+MENU:
+  punish: '<light_purple><b>Punish</b></light_purple> <gray>Menu</gray>'
+  ban: '<b><red>Ban</red></b> <gray>Menu</gray>'
+  mute: '<b><green>Mute</green></b> <gray>Menu</gray>'
 
 
 
 # Add punishments like this: (pay attention to capitalization)
-# Punishments:
+# PUNISHMENT:
 #   mode:
 #     punishment: Key, isn't used for anything directly.
 #       - ITEM
@@ -53,7 +53,7 @@ Menus:
 
 
 
-Punishments:
+PUNISHMENT:
   mute:
     swearing:
       - "SKELETON_SKULL"
