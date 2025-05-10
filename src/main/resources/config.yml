@@ -1,9 +1,9 @@
-PERMISSION:
-  - "punish"                # Permission for global access to punish and reload the plugin.
-  - "punish.punish"         # Permission to punish another player.
-  - "punish.reload"         # Permission to reload the plugin (both config and GUI).
-  - "punish.reload.config"  # Permission to reload the configurations.
-  - "punish.reload.gui"     # Permission to reload and update the punishment GUI.
+# PERMISSION:
+#   - "punish"                # Permission for global access to punish and reload the plugin.
+#   - "punish.punish"         # Permission to punish another player.
+#   - "punish.reload"         # Permission to reload the plugin (both config and GUI).
+#   - "punish.reload.config"  # Permission to reload the configurations.
+#   - "punish.reload.gui"     # Permission to reload and update the punishment GUI.
 
 
 
