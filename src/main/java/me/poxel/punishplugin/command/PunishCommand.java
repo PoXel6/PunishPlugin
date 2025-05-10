@@ -48,8 +48,7 @@ public final class PunishCommand extends BaseCommand {
 		}
 		final var targetName = Optional.of(target.displayName())
 		                               .orElse(Component.text("Target's display name is Null."));
-		final var message = Component.text("Targeted Player: " + targetName).color(NamedTextColor.RED);
-		player.sendMessage(message);
+		player.sendRichMessage("<red>Targeted Player: " + targetName + "</red>");
 		new PunishMenu().open(player);
 	}
 
