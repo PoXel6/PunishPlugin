@@ -56,7 +56,9 @@ public final class PunishCommand extends BaseCommand {
 	@CommandPermission("punish.reload")
 	@Description("reloads gui and config.")
 	public int onReload(CommandSender sender) {
-		return (onReloadConfig(sender) == SUCCESS) && (onReloadGui(sender) == SUCCESS) ? SUCCESS : ERROR;
+		return (onReloadConfig(sender) == SUCCESS) && (onReloadGui(sender) == SUCCESS)
+		       ? SUCCESS
+		       : ERROR;
 	}
 
 	@Subcommand("reload config|cfg")
