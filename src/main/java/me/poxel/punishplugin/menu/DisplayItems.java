@@ -20,8 +20,8 @@ public interface DisplayItems {
 		final var listItem = new ArrayList<GuiItem>();
 		for (final String key : section.getKeys(true)) {
 			final var list = section.getStringList(key);
-			final var item = ItemBuilder
-					.from(Optional.ofNullable(Material.getMaterial(list.get(0))).orElse(Material.STONE))
+			final var item = ItemBuilder.from(Optional.ofNullable(Material.getMaterial(list.get(0)))
+			                                          .orElse(Material.STONE))
 					.name(Component.text(list.get(1)).style(Style.style(TextDecoration.BOLD)))
 					.lore(Component.text("Reason: " + list.get(2)))
 					.lore(Component.text("Duration: " + list.get(3)))
