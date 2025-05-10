@@ -24,7 +24,8 @@ public interface DisplayItems {
 					.from(Optional.ofNullable(Material.getMaterial(list.get(0))).orElse(Material.STONE))
 					.name(Component.text(list.get(1)).style(Style.style(TextDecoration.BOLD)))
 					.lore(Component.text("Reason: " + list.get(2)))
-					.lore(Component.text("Duration: " + list.get(3))).asGuiItem();
+					.lore(Component.text("Duration: " + list.get(3)))
+					.asGuiItem();
 			listItem.add(item);
 		}
 		return listItem;
